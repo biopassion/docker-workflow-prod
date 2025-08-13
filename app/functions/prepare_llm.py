@@ -6,7 +6,7 @@ try:
     import dotenv
     dotenv.load_dotenv("../..")
 except:
-
+    # for streamlit cloud only
     os.environ['GROQ_API_KEY'] = st.secrets['GROQ_API_KEY']
     
 
