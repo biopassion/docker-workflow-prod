@@ -3,10 +3,11 @@ from langchain_groq import ChatGroq
 import streamlit as st
 
 try:
-    os.environ['GROQ_API_KEY'] = st.secrets['GROQ_API_KEY']
-except:
     import dotenv
-    dotenv.load_dotenv()
+    dotenv.load_dotenv("../..")
+except:
+    # for streamlit cloud only
+    os.environ['GROQ_API_KEY'] = st.secrets['GROQ_API_KEY']
     
 
 def prepare_llm(llm_model_id ="llama-3.3-70b-versatile", 
